@@ -22,6 +22,7 @@
 
             <button type="submit">Cari</button>
         </form>
+        <p><a href="/laporan">Kembali ke Laporan</a>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -33,7 +34,7 @@
                     <th>Alamat</th>
                     <th>Memo</th>
                 </tr>
-                @foreach ($data as $d)
+                @foreach ($results as $d)
                     <tr>
                         <td>{{ $d->nota }}</td>
                         <td>{{ $d->tgl }}</td>

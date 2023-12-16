@@ -22,3 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [StokJualController::class, 'index']);
 
 Route::get('/laporan', [LaporanPenjualanController::class, 'index']);
+Route::post('/search', [LaporanPenjualanController::class, 'search']);
