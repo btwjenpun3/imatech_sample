@@ -12,7 +12,7 @@
 
 <body>
     <div class="col-md-12 m-3">
-        <form action="/search" method="post">
+        <form action="/laporan" method="post">
             @csrf
             <label for="tanggal_mulai">Tanggal Mulai:</label>
             <input type="date" name="tanggal_mulai">
