@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StokJualController;
+use App\Http\Controllers\LaporanPenjualanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [StokJualController::class, 'index']);
+
+Route::get('/laporan', [LaporanPenjualanController::class, 'index']);

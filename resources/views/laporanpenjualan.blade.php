@@ -12,25 +12,29 @@
 
 <body>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <table class="table table-border">
                 <tr>
                     <th>Nomor Nota</th>
-                    <th>ID Barang</th>
-                    <th>Harga Jual</th>
+                    <th>Tanggal</th>
+                    <th>Customer</th>
+                    <th>Alamat</th>
+                    <th>Memo</th>
                 </tr>
-                @foreach ($all as $a)
+                @foreach ($data as $d)
                     <tr>
-                        <td>{{ $a->n_nota }}</td>
-                        <td>{{ $a->id_baran }}</td>
-                        <td>{{ $a->hrg_jual }}</td>
+                        <td>{{ $d->nota }}</td>
+                        <td>{{ $d->tgl }}</td>
+                        <td>{{ $d->kpd }}</td>
+                        <td>{{ $d->almt }}</td>
+                        <td>{{ $d->memo }}</td>
                     </tr>
                 @endforeach
             </table>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <a href="#">Laporan Penjualan</a>
-        </div>
+        </div> --}}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
