@@ -29,6 +29,8 @@
             <table class="table table-border">
                 <tr>
                     <th>Nomor Nota</th>
+                    <th>Barang</th>
+                    <th>Harga</th>
                     <th>Tanggal</th>
                     <th>Customer</th>
                     <th>Alamat</th>
@@ -37,6 +39,33 @@
                 @foreach ($results as $d)
                     <tr>
                         <td>{{ $d->nota }}</td>
+                        <td>
+                            @php
+                                $barang = $d
+                                    ->stokJual()
+                                    ->pluck('nama_barang')
+                                    ->implode(',');
+                                $hasil = explode(',', $barang);
+                                echo '<ul>';
+                                foreach ($hasil as $g) {
+                                    echo '<li>' . htmlspecialchars($g) . '</li>';
+                                }
+                                echo '</ul>';
+                            @endphp
+                        </td>
+                        <td>
+                            @php
+                                $harga = $d
+                                    ->stokJual()
+                                    ->wherePivot('hrg_jual', '>=', '0')
+                                    ->get();
+                                echo '<ul>';
+                                foreach ($harga as $c) {
+                                    echo '<li>' . htmlspecialchars($c->pivot->hrg_jual) . '</li>';
+                                }
+                                echo '</ul>';
+                            @endphp
+                        </td>
                         <td>{{ $d->tgl }}</td>
                         <td>{{ $d->kpd }}</td>
                         <td>{{ $d->almt }}</td>

@@ -7,7 +7,7 @@ use App\Models\StokJual;
 
 class StokJualController extends Controller
 {
-    public function index() {
+    public function index() {        
         $all = StokJual::all();
         return view('stokjual', [
             'all' => $all

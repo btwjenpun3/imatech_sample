@@ -10,5 +10,8 @@ class StokJual extends Model
     use HasFactory;
 
     protected $table = 'stok_jual';
+
+    protected $primaryKey = 'n_nota';
+
     protected $guarded = [ 'id' ];
 }

@@ -8,9 +8,10 @@ use App\Models\LaporanPenjualan;
 class LaporanPenjualanController extends Controller
 {
     public function index() {
-        $data = LaporanPenjualan::all();
+        $data = LaporanPenjualan::get();        
+       
         return view('laporanpenjualan', [
-            'data' => $data
+            'data' => $data,
         ]);
     }
 
